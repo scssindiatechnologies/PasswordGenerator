@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM PASSWORD GENERATOR</title>
+    <style>
+        p {
+            text-align: center;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        #myDIV,#myDIVV {
+            border: 1px solid black;
+            height: 50px;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            padding-top: 25px;
+            font-size: 25px;
+        }
+
+        .buttons {
+            margin: auto;
+            width: 200px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Any Random Password</p>
+
+    <div id="myDIV">New Password</div>
+    <div class="buttons">
+        <button onclick="myFunction()">Generate</button>
+    </div>
+
+    <br><br><br><br>
+
+    <p>Strong Computer Generated Password</p>
+
+    <div id="myDIVV">New Password</div>
+    <div class="buttons">
+        <button onclick="myFunction1()">Generate</button>
+    </div>
+
+    <script>
+        function myFunction() 
+        {
+            var x = document.getElementById("myDIV");
+            x.innerHTML = Math.random().toString(36).slice(2) + Math.random().toString(36).toUpperCase().slice(2);
+        }
+
+
+        function myFunction1() 
+        {
+
+            var chars = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()_-+={}[];'':\<>?,./"
+            var passlength = 12;
+            var password = "";
+
+            for(var i=0; i<passlength; i++)
+            {
+                var randomNumber = Math.floor(Math.random()*chars.length);
+                password = password + chars.substring(randomNumber,randomNumber+1);
+            }
+            var x = document.getElementById("myDIVV");
+            x.innerHTML = password;
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
